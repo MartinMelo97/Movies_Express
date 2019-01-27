@@ -1,0 +1,6 @@
+each movie in movies
+  .container
+    a(href=`/movies/${movie._id}`)
+      p=movie.title
+        form(action=`/movies/${movie._id}`, method="post")
+          button(type="submit") culo si no
