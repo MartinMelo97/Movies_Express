@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 })
 
 router.post("/update/:id", (req, res) => {
-  Movie.findByIdAndUpdate(req.params.id, req.body)
+  Movie.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
     .then((movie)=>{
       console.log(movie)
       res.redirect(`/movies/${movie._id}`)
